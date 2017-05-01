@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHL Crime and Gentrification</title>
+  <link href="https://fonts.googleapis.com/css?family=Istok+Web:400,400i" rel="stylesheet">
+  <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+<body>
+    <div class="row">
+      <div class="large-8 columns">
+        <div class="twentytwenty-container">
+          <img src="img/test-crime.png" />
+		  <img src="img/test-home-price.png" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="lightbox">
+  		<div class="iframeContainer">
+    		<div class="toolbarLB">
+      		<span class="closeLB" onclick="lightBoxClose()">✕</span>
+    	</div>
+		<h3>Philadelphia: Relationship between Falling Crime and Gentrification</h3>
+    	<div id="textbox">
+			<p><a href="https://en.wikipedia.org/wiki/Gentrification">Gentrification</a> refers to the influx of middle-class or affluent people into deteriorating areas, which often displaces poorer residents. <a href="https://www.nytimes.com/2017/01/05/upshot/how-to-predict-gentrification-look-for-falling-crime.html">A recent study</a> suggested that looking for areas for falling crime maybe an effective way to predict gentrification. 
+			
+			<p>This map visualisation aims to apply the theory in Philadelphia, trying to see if there is a relationship falling crime and soaring home sales prices.</p>
+			<br>
+			<small><p><b>Limitation:</b> As the crime data available online were collected by police district/ service area boundaries, they could not be shown by zip code boundaries for clearer comparison with the change in home sale prices. Besides, there are other variables to examine the extent of gentrification, including rent level and demograhpic change. They were not shown in this visualisation due to time constraint.</p>
+			
+			<p><b>Data Source:</b> <a href="https://www.opendataphilly.org/dataset/crime-incidents">Open Data Philly</a> and <a href="http://www.pewtrusts.org/~/media/assets/2017/04/pri_philadelphia_2017_state_of_the_city.pdf">The Pew Charitable Trusts</a></p></small>
+			
+    	</div>
+    	<div>
+    		<iframe width="650" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+    		</iframe>
+  		</div>
+	</div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+    lightBoxClose = function() {
+  	document.querySelector(".lightbox").classList.add("closed");
+	}
+		
+	$(window).load(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
+    });
+    </script>
+</body>
+</html>
